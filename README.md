@@ -42,3 +42,17 @@ limit 10
 | "Daikin Industries, Ltd."               | 105600    | 
 
 
+cau 5
+select co.country_name, sum(p.carbon_footprint_pcf) as "Total Pcf"
+from product_emissions p
+left join countries co on p.country_id = co.id
+group by 1
+order by 2 desc
+limit 5
+| country_name | Total Pcf | 
+| -----------: | --------: | 
+| Spain        | 9786130   | 
+| Germany      | 2251225   | 
+| Japan        | 653237    | 
+| USA          | 518381    | 
+| South Korea  | 186965    | 
