@@ -1,6 +1,71 @@
 # Carbon
+## I. Introduce:
+This report aims to analyze carbon emissions to examine the carbon footprint across various industries. We aim to identify sectors with the highest levels of emissions by analyzing them across countries and years, as well as to uncover trends.
 
-##1. Which products contribute the most to carbon emissions?
+Carbon emissions play a crucial role in the environment, accounting for over 75% of global emissions and posing a significant environmental challenge. These emissions contribute to the accumulation of greenhouse gases in the atmosphere, leading to climate change, planetary warming, and involvement in various environmental disasters.
+
+Through this analysis, we hope to gain an understanding of the environmental impact of different industries and contribute to making informed decisions in sustainable development.
+
+
+## II. Data Source: Where Our Data Comes From
+Our dataset is compiled from publicly available data from nature.com and encompasses the product carbon footprints (PCF) for various companies. PCFs represent the greenhouse gas emissions associated with specific products, quantified in CO2 (carbon dioxide equivalent).
+
+
+## III. Data Structure
+The dataset consists of 4 tables containing information regarding carbon emissions generated during the production of goods.
+
+
+Tables' columns description
+Table 'product_emissions'
+id: Identifier for each product emission record.
+company_id: Identifier for the company associated with the product.
+country_id: Identifier for the country where the product is being produced.
+industry_group_id: Identifier for the industry group to which the product belongs.
+year: The year in which the emissions data was recorded.
+product_name: The name of the product associated with the emissions data.
+weight_kg: The weight of the product in kilograms.
+carbon_footprint_pcf: The carbon footprint of the product, measured in CO2 equivalent.
+upstream_percent_total_pcf: The percentage of the total carbon footprint attributed to upstream activities.
+operations_percent_total_pcf: The percentage of the total carbon footprint attributed to operations.
+downstream_percent_total_pcf: The percentage of the total carbon footprint attributed to downstream activities.
+ 
+
+Table 'industry_groups'
+id: Unique identifier for each industry group.
+industry_group: The name of the industry group, categorizing businesses within similar sectors based on their products or services offered.
+ 
+
+Table 'companies'
+id: Unique identifier for each company.
+company_name: The name of the company, identifying the specific organization within the dataset.
+ 
+
+Table 'countries'
+id: Unique identifier for each country.
+country_name: The name of the country.
+2. Project brief
+ENVN
+💼 Project brief
+You are required to analyze the data to answer the given questions and compile a comprehensive report in the repository on Github, which includes the following:
+
+[❗mandatory] Logical division using headers of different levels.
+[❗mandatory] Listings of SQL queries.
+[❗mandatory] Tables with the results of SQL queries.
+[❗mandatory] Text explanations for the executed queries.
+[❗mandatory] Conclusions and insights based on the obtained database responses.
+(where you can identify potentially useful insights, interesting facts, or patterns; for example, upon closer examination, it can be observed that the "Pharmaceuticals, Biotechnology & Life Sciences" industry is one of the leaders in carbon emissions - "Now we know what our health comes at.").
+Additional requirements
+[❗mandatory] The project report should begin with a description of the task and an overview of the tables (SQL query to each table for selecting all columns for the first 5-10 rows).
+[❗mandatory] All fractional values should be rounded to 2 decimal places.
+Optional points
+[⭐️optional] Illustrations such as photographs (e.g., cover photo at the beginning of the report), graphs (e.g., graphs generated using MS Excel or Google Sheets based on data), diagrams (database schema), and others.
+[⭐️optional] Any additional research and conclusions are welcome. For example:
+Research of carbon emissions over continents.
+Checking correlations, such as the correlation between product weight and carbon emissions levels.
+Exploring the environmental friendliness of industrial sectors.
+
+## IV. Findings and Recommendations
+### 1. Which products contribute the most to carbon emissions?
 ```
 select
 product_name,
@@ -23,7 +88,7 @@ limit 10
 | Electric Motor                                                                                                                     | 87589                | 
 
 
-## 2. What are the industry groups of these products?
+### 2. What are the industry groups of these products?
 
 There are industry group of top 10 products contribute the most to carbon emissions:
 ```
@@ -52,7 +117,7 @@ limit 10
 | Mercedes-Benz SL (SL 350)                                                                                                          | Automobiles & Components           | 72000.0000     | 
 
 
-## 3.What are the industries with the highest contribution to carbon emissions?
+### 3.What are the industries with the highest contribution to carbon emissions?
 ```
 select i.industry_group, sum(p.carbon_footprint_pcf) as "Total Pcf"
 from product_emissions p
@@ -75,7 +140,7 @@ limit 10
 | Software & Services                              | 46544     | 
 | Media                                            | 23017     | 
 
-## 4.What are the companies with the highest contribution to carbon emissions?
+### 4.What are the companies with the highest contribution to carbon emissions?
 ```
 select c.company_name, sum(p.carbon_footprint_pcf) as "Total Pcf"
 from product_emissions p
@@ -98,7 +163,7 @@ limit 10
 | "Daikin Industries, Ltd."               | 105600    | 
 
 
-## 5.What are the countries with the highest contribution to carbon emissions?
+### 5.What are the countries with the highest contribution to carbon emissions?
 ```
 select co.country_name, sum(p.carbon_footprint_pcf) as "Total Pcf"
 from product_emissions p
@@ -116,7 +181,7 @@ limit 5
 | South Korea  | 186965    | 
 
 
-## 6.What is the trend of carbon footprints (PCFs) over the years?
+### 6.What is the trend of carbon footprints (PCFs) over the years?
 ```
 select year, sum(carbon_footprint_pcf) as carb_footprint
 from product_emissions
@@ -131,7 +196,7 @@ order by 1 asc
 | 2016 | 1640182        | 
 | 2017 | 340271         | 
 
-## 7.Which industry groups has demonstrated the most notable decrease in carbon footprints (PCFs) over time?
+### 7.Which industry groups has demonstrated the most notable decrease in carbon footprints (PCFs) over time?
 ```
 select p.year, i.industry_group, sum(p.carbon_footprint_pcf) as "Total PCF"
 from product_emissions p
@@ -212,3 +277,7 @@ order by 2 asc, 1 asc
 | 2013 | Utilities                                                              | 122       | 
 | 2016 | Utilities                                                              | 122       | 
 
+
+The products with the highest levels of carbon emissions are typically associated with heavy industry.
+The following car models are leading in carbon emissions during production: Land Cruiser Prado, Mercedes-Benz GLA, Mercedes-Benz S-Class, and Mercedes-Benz SL
+One of the leading industries (7th place) is "Pharmaceuticals, Biotechnology & Life Sciences". Now we know what our health comes at.
