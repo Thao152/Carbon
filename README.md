@@ -43,26 +43,6 @@ company_name: The name of the company, identifying the specific organization wit
 Table 'countries'
 id: Unique identifier for each country.
 country_name: The name of the country.
-2. Project brief
-ENVN
-💼 Project brief
-You are required to analyze the data to answer the given questions and compile a comprehensive report in the repository on Github, which includes the following:
-
-[❗mandatory] Logical division using headers of different levels.
-[❗mandatory] Listings of SQL queries.
-[❗mandatory] Tables with the results of SQL queries.
-[❗mandatory] Text explanations for the executed queries.
-[❗mandatory] Conclusions and insights based on the obtained database responses.
-(where you can identify potentially useful insights, interesting facts, or patterns; for example, upon closer examination, it can be observed that the "Pharmaceuticals, Biotechnology & Life Sciences" industry is one of the leaders in carbon emissions - "Now we know what our health comes at.").
-Additional requirements
-[❗mandatory] The project report should begin with a description of the task and an overview of the tables (SQL query to each table for selecting all columns for the first 5-10 rows).
-[❗mandatory] All fractional values should be rounded to 2 decimal places.
-Optional points
-[⭐️optional] Illustrations such as photographs (e.g., cover photo at the beginning of the report), graphs (e.g., graphs generated using MS Excel or Google Sheets based on data), diagrams (database schema), and others.
-[⭐️optional] Any additional research and conclusions are welcome. For example:
-Research of carbon emissions over continents.
-Checking correlations, such as the correlation between product weight and carbon emissions levels.
-Exploring the environmental friendliness of industrial sectors.
 
 ## IV. Findings and Recommendations
 ### 1. Which products contribute the most to carbon emissions?
