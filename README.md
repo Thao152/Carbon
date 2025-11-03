@@ -66,7 +66,21 @@ limit 10
 | TCDE                                                                                                                               | 99075                | 
 | Mercedes-Benz GLE (GLE 500 4MATIC)                                                                                                 | 91000                | 
 | Electric Motor                                                                                                                     | 87589                | 
+The products with the highest carbon emissions are mainly wind turbines, which have extremely large footprints due to their massive scale and material intensity.
 
+Top emitters:
+
+Wind Turbine G128 5 MW (3.72M PCF)
+
+Wind Turbine G132 5 MW (3.28M PCF)
+
+Wind Turbine G114 2 MW (1.53M PCF)
+
+Wind Turbine G90 2 MW (1.25M PCF)
+
+Other notable products: large vehicles (Land Cruiser Prado, Mercedes-Benz GLE), heavy materials (retaining wall structures), and electric motors.
+
+➡ Insight: Renewable energy equipment like wind turbines have high carbon footprints in production despite being green in operation.
 
 ### 2. What are the industry groups of these products?
 
@@ -96,6 +110,15 @@ limit 10
 | Mercedes-Benz S-Class (S 500)                                                                                                      | Automobiles & Components           | 85000.0000     | 
 | Mercedes-Benz SL (SL 350)                                                                                                          | Automobiles & Components           | 72000.0000     | 
 
+- The products with the highest carbon emissions mainly belong to:
+
+- Electrical Equipment and Machinery – wind turbines dominate this group.
+
+- Automobiles & Components – includes major vehicle manufacturers like Toyota and Mercedes-Benz.
+
+- Materials – includes large steel-based constructions and structural components.
+
+➡ Insight: High-emission industries are those requiring large amounts of raw materials and energy-intensive manufacturing processes.
 
 ### 3.What are the industries with the highest contribution to carbon emissions?
 ```
@@ -120,6 +143,9 @@ limit 10
 | Software & Services                              | 46544     | 
 | Media                                            | 23017     | 
 
+➡ Insight: The Electrical Equipment & Machinery sector contributes nearly four times more than the next industry, driven by turbine manufacturing.
+- These top three industries account for the vast majority of total emissions.
+
 ### 4.What are the companies with the highest contribution to carbon emissions?
 ```
 select c.company_name, sum(p.carbon_footprint_pcf) as "Total Pcf"
@@ -142,6 +168,11 @@ limit 10
 | "Lexmark International, Inc."           | 132012    | 
 | "Daikin Industries, Ltd."               | 105600    | 
 
+➡ Insight:
+
+- Gamesa (Spain) dominates emissions through its large-scale turbine production.
+
+- Daimler and Volkswagen follow, representing the automotive sector’s heavy impact.
 
 ### 5.What are the countries with the highest contribution to carbon emissions?
 ```
@@ -160,6 +191,11 @@ limit 5
 | USA          | 518381    | 
 | South Korea  | 186965    | 
 
+➡ Insight:
+
+- Spain’s leading position is due to Gamesa’s turbine production.
+
+- Germany and Japan follow, driven by automotive and industrial manufacturing.
 
 ### 6.What is the trend of carbon footprints (PCFs) over the years?
 ```
@@ -175,6 +211,12 @@ order by 1 asc
 | 2015 | 10840415       | 
 | 2016 | 1640182        | 
 | 2017 | 340271         | 
+
+➡ Insight:
+
+- A massive spike in 2015 corresponds to large-scale turbine and automotive production data recorded that year.
+
+- After 2015, emissions dropped significantly — possibly due to improved reporting, efficiency, or reduced data coverage
 
 ### 7.Which industry groups has demonstrated the most notable decrease in carbon footprints (PCFs) over time?
 ```
@@ -257,7 +299,23 @@ order by 2 asc, 1 asc
 | 2013 | Utilities                                                              | 122       | 
 | 2016 | Utilities                                                              | 122       | 
 
+- Electrical Equipment and Machinery: peaked in 2015 (9.8M PCF) then declined sharply afterward.
 
-- The products with the highest levels of carbon emissions are typically associated with heavy industry.
-- The following car models are leading in carbon emissions during production: Land Cruiser Prado, Mercedes-Benz GLA, Mercedes-Benz S-Class, and Mercedes-Benz SL
-- One of the leading industries (7th place) is "Pharmaceuticals, Biotechnology & Life Sciences". Now we know what our health comes at.
+- Technology Hardware & Equipment and Software & Services: show strong reduction trends after 2015.
+
+- Automobiles & Components: dropped notably after 2016.
+
+- Food, Beverage & Tobacco: fluctuated but shows overall decline after 2016.
+
+➡ Insight:
+- Industries tied to energy production, machinery, and automotive manufacturing are showing the strongest emission reductions, suggesting improved production efficiency and cleaner technologies post-2015.
+
+### 🧭 Overall Summary
+
+- Main contributors: Wind turbine and automotive manufacturing.
+
+- Leading emitter: Gamesa Corporación Tecnológica, S.A. (Spain).
+
+- Peak emission year: 2015, dominated by heavy industrial data.
+
+- Declining trend: Significant reductions in PCFs after 2015, especially in heavy industries.
