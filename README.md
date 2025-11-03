@@ -1,4 +1,6 @@
 # Carbon
+
+##1. Which products contribute the most to carbon emissions?
 ```
 select
 product_name,
@@ -20,7 +22,8 @@ limit 10
 | Mercedes-Benz GLE (GLE 500 4MATIC)                                                                                                 | 91000                | 
 | Electric Motor                                                                                                                     | 87589                | 
 
-2. What are the industry groups of these products?
+
+## 2. What are the industry groups of these products?
 
 There are industry group of top 10 products contribute the most to carbon emissions:
 ```
@@ -49,7 +52,7 @@ limit 10
 | Mercedes-Benz SL (SL 350)                                                                                                          | Automobiles & Components           | 72000.0000     | 
 
 
-cau 3
+## 3.What are the industries with the highest contribution to carbon emissions?
 ```
 select i.industry_group, sum(p.carbon_footprint_pcf) as "Total Pcf"
 from product_emissions p
@@ -72,7 +75,7 @@ limit 10
 | Software & Services                              | 46544     | 
 | Media                                            | 23017     | 
 
-cau 4
+## 4.What are the companies with the highest contribution to carbon emissions?
 ```
 select c.company_name, sum(p.carbon_footprint_pcf) as "Total Pcf"
 from product_emissions p
@@ -95,7 +98,7 @@ limit 10
 | "Daikin Industries, Ltd."               | 105600    | 
 
 
-cau 5
+## 5.What are the countries with the highest contribution to carbon emissions?
 ```
 select co.country_name, sum(p.carbon_footprint_pcf) as "Total Pcf"
 from product_emissions p
@@ -113,7 +116,7 @@ limit 5
 | South Korea  | 186965    | 
 
 
-cau 6
+## 6.What is the trend of carbon footprints (PCFs) over the years?
 ```
 select year, sum(carbon_footprint_pcf) as carb_footprint
 from product_emissions
@@ -128,6 +131,7 @@ order by 1 asc
 | 2016 | 1640182        | 
 | 2017 | 340271         | 
 
+## 7.Which industry groups has demonstrated the most notable decrease in carbon footprints (PCFs) over time?
 ```
 select p.year, i.industry_group, sum(p.carbon_footprint_pcf) as "Total PCF"
 from product_emissions p
