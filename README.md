@@ -258,6 +258,6 @@ order by 2 asc, 1 asc
 | 2016 | Utilities                                                              | 122       | 
 
 
-The products with the highest levels of carbon emissions are typically associated with heavy industry.
-The following car models are leading in carbon emissions during production: Land Cruiser Prado, Mercedes-Benz GLA, Mercedes-Benz S-Class, and Mercedes-Benz SL
-One of the leading industries (7th place) is "Pharmaceuticals, Biotechnology & Life Sciences". Now we know what our health comes at.
+- The products with the highest levels of carbon emissions are typically associated with heavy industry.
+- The following car models are leading in carbon emissions during production: Land Cruiser Prado, Mercedes-Benz GLA, Mercedes-Benz S-Class, and Mercedes-Benz SL
+- One of the leading industries (7th place) is "Pharmaceuticals, Biotechnology & Life Sciences". Now we know what our health comes at.
